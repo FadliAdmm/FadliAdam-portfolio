@@ -1,0 +1,166 @@
+*{
+  padding:0;
+  margin:0;
+}
+
+body {
+  font-family:sans-serif;
+}
+
+nav {
+  display:flex;
+  align-items:center;
+  height:50px;
+  background-color:#4169E1;
+  justify-content: space-around;
+  
+}
+
+nav ul {
+  display:flex;
+  width:40%;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+nav ul li a {
+  color:white;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+nav ul li a:hover {
+  color:#D3D3D3;
+}
+
+/*humberger menu*/
+.togle-menu {
+  display:none;
+  flex-direction:column;
+  height:20px;
+  justify-content: space-between;
+  position:relative;
+}
+
+.togle-menu input {
+  position:absolute;
+  width:40px;
+  height: 28px;
+  opacity:0;
+  left:-5px;
+  top:-5px;
+  cursor:pointer;
+  z-index:50;
+}
+
+.togle-menu span {
+  display:block;
+  width:28px;
+  height: 3px;
+  background-color:white;
+  border-radius:3px;
+  transition: all 0.5s;
+  z-index:40;
+}
+
+/* membuat animasi humberger menu */
+.togle-menu span:nth-child(2) {
+transform-origin:0 0;
+}
+
+.togle-menu span:nth-child(4) {
+transform-origin:0 100%;
+}
+
+.togle-menu input:checked ~ span:nth-child(2) {
+  transform:rotate(45deg) translate(-1px, -1px);
+}
+
+.togle-menu input:checked ~ span:nth-child(4) {
+  transform:rotate(-45deg) translate(-1px, 0);
+}
+
+.togle-menu input:checked ~ span:nth-child(3) {
+  transform:  scale(0);
+  opacity:0;
+}
+
+.logo {
+  color: white ;
+}
+
+/* hero section */
+.jumbotron {
+  padding-top:6rem;
+  background:#e2edff;
+}
+
+/*project konten*/
+#project {
+  background:#e2edff ;
+}
+
+#skill {
+}
+
+img {
+  width:250px;
+  height:170px;
+  
+}
+
+section {
+  padding-top:5rem;
+}
+
+  
+/* responsive navigasi bar*/
+
+/* Ketika di perangkat tablet tablet*/
+@media screen and (max-width: 768px){
+  nav ul {
+    width:50%;
+  }
+}
+
+/* Ketika di perangkat mobile*/
+@media screen and (max-width: 576px){
+  
+    .togle-menu {
+    display:flex;
+  }
+  
+  nav ul li a {
+    font-size:20px;
+  }
+  
+  nav ul li a:hover {
+    color:black;
+  }
+  
+  /* desain sidebar dan animasi*/
+  nav ul {
+    position:absolute;
+    right:0;
+    top:0;
+    flex-direction: column;
+    background:#4169E1;
+    width:50%;
+    height:100vh;
+    align-items:center;
+    justify-content: space-evenly;
+    z-index:-1;
+    transform: translateY(-100%);
+    transition: all 2s;
+    border-radius:10px;
+  }
+  
+  nav ul.slide {
+    z-index:10;
+    transform: translateY(0);
+    opacity: .7;
+  }
+  
+
+  
+}
